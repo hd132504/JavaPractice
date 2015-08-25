@@ -27,11 +27,11 @@ public class SmartPhone {
 		
 	}
 	
-	public void useSpecialFunction(SmartPhone phone){
-		if(phone instanceof Galaxy)
-			((Galaxy) phone).useWirelessCharging();
-		else if(phone instanceof iPhone)
-			((iPhone) phone).useAirDrop();
+	public void useSpecialFunction(){
+		if(this instanceof Galaxy)
+			((Galaxy) this).useWirelessCharging();
+		else if(this instanceof iPhone)
+			((iPhone) this).useAirDrop();
 	}
 	
 	public String toString(){

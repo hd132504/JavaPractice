@@ -10,7 +10,7 @@ public class SmartPhoneTest {
 		System.out.println(a.toString());
 		a.turnOn();
 		a.pay();
-		a.useSpecialFunction(a);
+		a.useSpecialFunction();
 		a.turnOff();
 		
 		System.out.println();
@@ -18,7 +18,7 @@ public class SmartPhoneTest {
 		System.out.println(b.toString());
 		b.turnOn();
 		b.pay();
-		b.useSpecialFunction(b);
+		b.useSpecialFunction();
 		b.turnOff();
 	}
 
