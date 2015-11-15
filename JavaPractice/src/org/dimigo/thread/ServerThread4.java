@@ -1,8 +1,10 @@
 package org.dimigo.thread;
 
+import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.Socket;
@@ -66,7 +68,10 @@ public class ServerThread4 implements Runnable {
 	    		/********************************************
 	    		 * 바이트기반 스트림을 생성하여 파일에서 읽어 byte[]에 담기
 	    		 ********************************************/
-		    	
+	    		try(BufferedInputStream is = new BufferedInputStream(new FileInputStream(file))){
+	    			is.read(bytes);	
+	    		}
+	    		
 		    	// 정상적으로 처리가 되었음을 나타내는 200 코드를 출력한다.
 		    	out.writeBytes("HTTP/1.1 200" + NEWLINE);
 		    	out.writeBytes("Content-type: " + contentType(fileName) + NEWLINE);

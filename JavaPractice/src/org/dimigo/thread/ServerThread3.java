@@ -73,6 +73,7 @@ public class ServerThread3 implements Runnable {
 	    		try(BufferedInputStream is = new BufferedInputStream(new FileInputStream(file))){
 	    			is.read(bytes);	
 	    		}
+	    		
 		    	// 정상적으로 처리가 되었음을 나타내는 200 코드를 출력한다.
 		    	out.write(("HTTP/1.1 200" + NEWLINE).getBytes());
 		    	out.write(("Content-type: " + contentType(fileName) + NEWLINE).getBytes());
